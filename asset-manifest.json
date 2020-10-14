@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mapgame/static/css/main.5f361e03.chunk.css",
+    "main.js": "/mapgame/static/js/main.04a0653e.chunk.js",
+    "main.js.map": "/mapgame/static/js/main.04a0653e.chunk.js.map",
+    "runtime-main.js": "/mapgame/static/js/runtime-main.47aa3502.js",
+    "runtime-main.js.map": "/mapgame/static/js/runtime-main.47aa3502.js.map",
+    "static/js/2.d5222793.chunk.js": "/mapgame/static/js/2.d5222793.chunk.js",
+    "static/js/2.d5222793.chunk.js.map": "/mapgame/static/js/2.d5222793.chunk.js.map",
+    "index.html": "/mapgame/index.html",
+    "precache-manifest.68e66edd16e921888e9cc6603adee180.js": "/mapgame/precache-manifest.68e66edd16e921888e9cc6603adee180.js",
+    "service-worker.js": "/mapgame/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/mapgame/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.d5222793.chunk.js.LICENSE.txt": "/mapgame/static/js/2.d5222793.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/mapgame/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.47aa3502.js",
+    "static/js/2.d5222793.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.04a0653e.chunk.js"
+  ]
+}
