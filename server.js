@@ -9,6 +9,8 @@ const app = express();
 
 const PORT = process.env.PORT || 3000;
 
+app.set("port", PORT);
+
 // Adds json parsing middleware
 app.use(express.json());
 
