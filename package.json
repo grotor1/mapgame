@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "engines": {
     "node": "14.x",
-    "npm" : "6.x"
+    "npm": "6.x"
   },
   "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "heroku-postbuild":"cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "react-draggable": "^4.4.3"
   }
 }
