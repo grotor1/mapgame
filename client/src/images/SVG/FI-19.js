@@ -1,9 +1,12 @@
 import React from "react";
 
-export const FI_19 = () => {
+export const FI_19 = (color) => {
+    const style = {
+        fill : color
+    };
     return (
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.7 77.43">
+            <svg style={style} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89.7 77.43">
                 <defs>
                     <style>fill:#534741;stroke:#fff;stroke-width:0.5px;</style>
                 </defs>

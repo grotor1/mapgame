@@ -1,15 +1,11 @@
 import React from 'react';
 
-export const FI_03 = () => {
+export const FI_03 = (color) => {
+    const style = {
+        fill : color
+    };
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.08 106.46">
-            <defs>
-                <style>
-                    fill:#534741;
-                    stroke:#fff;
-                    stroke-width:0.5px;
-                </style>
-            </defs>
+        <svg style={style} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.08 106.46">
             <g id="Слой_2" data-name="Слой 2">
                 <g id="Слой_1-2" data-name="Слой 1">
                     <path id="FI-03" className="cls-1"

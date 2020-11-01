@@ -1,7 +1,10 @@
 import React from 'react';
 
-export const FI_09 = () => {
-    return (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.24 57.72">
+export const FI_09 = (color) => {
+    const style = {
+        fill : color
+    };
+    return (<svg style={style} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63.24 57.72">
         <defs>
             <style>fill:#534741;stroke:#fff;stroke-width:0.5px;</style>
         </defs>
