@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Fl_02 = () =>{
+export const FI_02 = () =>{
     return(
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.56 80.14">
             <defs>
