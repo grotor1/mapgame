@@ -1,22 +1,14 @@
 import React from "react";
-import {regions} from "../db.js";
-import {render} from "react-dom";
+import Draggable from 'react-draggable';
+import {US_AK} from '../images/SVG/US-AK'
 
 export const Map = (props) => {
-        return (
-            <div>
-                <div className="map-background">
-                    {regions
-                        .map(item => {
-                            return (
-                                <div onClick={() => props.colorChange(item)}>
-                                    {item.svgSrc(props.state.colorSrc[item.styleSrc])}
-                                </div>
-                            )
-                        })
-                    }
-                </div>
+    return (
+        <div>
+            <div className="map-background">
+                <US_AK/>
             </div>
-        );
+        </div>
+    );
 }
 

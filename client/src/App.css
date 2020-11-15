@@ -16,6 +16,10 @@ body{
   fill: red;
 }
 
+.map-reg{
+  position: absolute;
+}
+
 .FI-01{
   width: 1200px;
   color: #323232;
