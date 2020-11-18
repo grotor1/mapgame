@@ -1,59 +1,53 @@
-import React,{useState} from 'react';
+import React from 'react';
 import './App.css';
 import {Map} from './components/Map';
 
 
 
 function App() {
-    const [state,setState] = useState({
-            colorSrc : {
-                "FI-01": "black",
-                "FI-02": "black",
-                "FI-03": "black",
-                "FI-04": "black",
-                "FI-05": "black",
-                "FI-06": "black",
-                "FI-07": "black",
-                "FI-08": "black",
-                "FI-09": "black",
-                "FI-10": "black",
-                "FI-11": "black",
-                "FI-12": "black",
-                "FI-13": "black",
-                "FI-14": "black",
-                "FI-15": "black",
-                "FI-16": "black",
-                "FI-17": "black",
-                "FI-18": "black",
-                "FI-19": "black",
-            }
+    const handleClick = (id) =>{
+        console.log(id);
+        const classBlock = document.getElementById(id).classList[0];
+        console.log(classBlock);
+        if(document.getElementById(id).classList.contains("grey")){
+            document.getElementsByClassName(classBlock)[0].classList.remove("grey");
+            document.getElementsByClassName(classBlock)[0].classList.add("red");
+            console.log(document.getElementsByClassName(classBlock));
+            document.getElementsByClassName(classBlock)[1].classList.remove("grey");
+            document.getElementsByClassName(classBlock)[1].classList.add("red");
         }
-    );
-    const handleClick = (item) =>{
-        if(state.colorSrc[item.styleSrc]==="black"){
-            let newColors = {...state.colorSrc};
-            newColors[item.styleSrc] = "red";
-            setState({...state, colorSrc:newColors})
+        else if(document.getElementById(id).classList.contains("red")){
+            console.log("cool2");
+            document.getElementsByClassName(classBlock)[0].classList.remove("red");
+            document.getElementsByClassName(classBlock)[0].classList.add("green");
+            document.getElementsByClassName(classBlock)[1].classList.remove("red");
+            document.getElementsByClassName(classBlock)[1].classList.add("green");
         }
-        if(state.colorSrc[item.styleSrc]==="red"){
-            let newColors = {...state.colorSrc};
-            newColors[item.styleSrc] = "blue";
-            setState({...state, colorSrc:newColors})
+        else if(document.getElementById(id).classList.contains("green")){
+            console.log("cool3");
+            document.getElementsByClassName(classBlock)[0].classList.remove("green");
+            document.getElementsByClassName(classBlock)[0].classList.add("yellow");
+            document.getElementsByClassName(classBlock)[1].classList.remove("green");
+            document.getElementsByClassName(classBlock)[1].classList.add("yellow");
         }
-        if(state.colorSrc[item.styleSrc]==="blue"){
-            let newColors = {...state.colorSrc};
-            newColors[item.styleSrc] = "green";
-            setState({...state, colorSrc:newColors})
+        else if(document.getElementById(id).classList.contains("yellow")){
+            console.log("cool4");
+            document.getElementsByClassName(classBlock)[0].classList.remove("yellow");
+            document.getElementsByClassName(classBlock)[0].classList.add("blue");
+            document.getElementsByClassName(classBlock)[1].classList.remove("yellow");
+            document.getElementsByClassName(classBlock)[1].classList.add("blue");
         }
-        if(state.colorSrc[item.styleSrc]==="green"){
-            let newColors = {...state.colorSrc};
-            newColors[item.styleSrc] = "red";
-            setState({...state, colorSrc:newColors})
+        else if(document.getElementById(id).classList.contains("blue")){
+            console.log("cool5");
+            document.getElementsByClassName(classBlock)[0].classList.remove("blue");
+            document.getElementsByClassName(classBlock)[0].classList.add("red");
+            document.getElementsByClassName(classBlock)[1].classList.remove("blue");
+            document.getElementsByClassName(classBlock)[1].classList.add("red");
         }
     }
     return (
         <div>
-            <Map state = {state} colorChange = {handleClick}/>
+            <Map colorChange = {handleClick}/>
         </div>
     );
 }
