@@ -1,44 +1,91 @@
-body{
-  background-color: #323232;
+body {
+    background-color: #323232;
 }
 
-.map-background{
-  background-color: #f4f4f4;
-  display: inline-block;
-  width: 1400px;
-  margin-left: 40px;
-  height: 92vh;
-  margin-top: 40px;
-  text-align: center;
+.map-background {
+    position: absolute;
+    background-color: #f4f4f4;
+    display: inline-block;
+    width: 1400px;
+    margin-left: 40px;
+    height: 92vh;
+    margin-top: 40px;
+    text-align: center;
 }
 
-.map-full{
-  margin-top: 10%;
-  height: 70%;
-  padding-right: 2%;
+.map-full {
+    margin-top: 10%;
+    height: 70%;
+    padding-right: 2%;
 }
 
-.red{
-  fill: red;
+.red {
+    fill: red;
 }
 
-.yellow{
-  fill: yellow;
+.yellow {
+    fill: yellow;
 }
 
-.blue{
-  fill: blue;
+.blue {
+    fill: blue;
 }
 
-.green{
-  fill: green;
+.green {
+    fill: green;
 }
 
-.cls-1{
-  stroke : #fff;
-  stroke-width : 2px;
+.cls-1 {
+    stroke: #fff;
+    stroke-width: 2px;
 }
 
-.grey{
-  fill : #ccc;
+.grey {
+    fill: #ccc;
+}
+
+.task-background {
+    position: absolute;
+    background-color: #f4f4f4;
+    display: inline-block;
+    width: 400px;
+    margin-left: 1480px;
+    margin-top:  60vh;
+    height: 36.1vh;
+}
+
+.progress-background{
+    position: absolute;
+    background-color: #f4f4f4;
+    display: inline-block;
+    width: 400px;
+    margin-left: 1480px;
+    margin-top: 40px;
+    height: 36.1vh;
+}
+
+.task_state-name {
+    margin: 10px 20px 0px;
+    font-size: 20pt;
+}
+
+.progress{
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 20px;
+    width: 360px;
+}
+
+.progress_state-name{
+    font-size: 17pt;
+    margin-bottom: 15px;
+}
+
+.progress_state-votes{
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    margin-left: 315px;
+    margin-top: -47px;
+    font-size: 20pt;
 }
