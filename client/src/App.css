@@ -3,7 +3,6 @@ body {
 }
 
 .map-background {
-    position: absolute;
     background-color: #f4f4f4;
     display: inline-block;
     width: 1400px;
@@ -14,9 +13,9 @@ body {
 }
 
 .map-full {
-    margin-top: 10%;
-    height: 70%;
-    padding-right: 2%;
+    margin-top: 100px;
+    height: 700px;
+    padding-right: 20px;
 }
 
 .red {
@@ -31,8 +30,8 @@ body {
     fill: blue;
 }
 
-.green {
-    fill: green;
+.black {
+    fill: black;
 }
 
 .cls-1 {
@@ -45,23 +44,18 @@ body {
 }
 
 .task-background {
-    position: absolute;
     background-color: #f4f4f4;
     display: inline-block;
     width: 400px;
-    margin-left: 1480px;
-    margin-top:  60vh;
     height: 36.1vh;
 }
 
 .progress-background{
-    position: absolute;
     background-color: #f4f4f4;
     display: inline-block;
+    margin-left: 40px;
     width: 400px;
-    margin-left: 1480px;
-    margin-top: 40px;
-    height: 36.1vh;
+    padding-bottom: 40px;
 }
 
 .task_state-name {
@@ -71,21 +65,39 @@ body {
 
 .progress{
     display: inline-block;
-    margin-top: 15px;
     margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
     width: 360px;
 }
 
 .progress_state-name{
+    display: inline-block;
     font-size: 17pt;
     margin-bottom: 15px;
 }
 
 .progress_state-votes{
-    text-align: right;
+    margin-left: 60px;
     display: inline-block;
-    position: absolute;
-    margin-left: 315px;
-    margin-top: -47px;
+    font-size: 17pt;
+}
+
+.task_task{
+    margin: 10px 20px 0px;
+    font-size: 12pt;
+}
+
+.resourcesDisplay_background{
+    background-color: #f4f4f4;
+    display: inline-block;
+    width: 430px;
+    height: 92vh;
+    margin-left: 40px;
+    margin-bottom: 40px;
+}
+
+.resourcesDisplay_state-name{
+    margin: 10px 20px 0px;
     font-size: 20pt;
 }

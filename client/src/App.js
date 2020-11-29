@@ -3,16 +3,18 @@ import './App.css';
 import {Map} from './components/Map';
 import {Task} from "./components/Task";
 import {Progress} from "./components/Progress";
+import {ResourcesDisplay} from "./components/Resources";
 
 
 function App() {
     const [count, setCount] = useState({
         block: "",
-        blue: 0,
-        red: 0,
-        green: 0,
-        yellow: 0
+        blue: [],
+        red: [],
+        black: [],
+        yellow: []
     });
+
     const handleClick = (id) => {
         const classBlock = document.getElementById(id).classList[0];
         if (document.getElementById(id).classList.contains("grey")) {
@@ -22,39 +24,40 @@ function App() {
             document.getElementsByClassName(classBlock)[1].classList.add("red");
         } else if (document.getElementById(id).classList.contains("red")) {
             document.getElementsByClassName(classBlock)[0].classList.remove("red");
-            document.getElementsByClassName(classBlock)[0].classList.add("green");
-            document.getElementsByClassName(classBlock)[1].classList.remove("red");
-            document.getElementsByClassName(classBlock)[1].classList.add("green");
-        } else if (document.getElementById(id).classList.contains("green")) {
-            document.getElementsByClassName(classBlock)[0].classList.remove("green");
-            document.getElementsByClassName(classBlock)[0].classList.add("yellow");
-            document.getElementsByClassName(classBlock)[1].classList.remove("green");
-            document.getElementsByClassName(classBlock)[1].classList.add("yellow");
-        } else if (document.getElementById(id).classList.contains("yellow")) {
-            document.getElementsByClassName(classBlock)[0].classList.remove("yellow");
             document.getElementsByClassName(classBlock)[0].classList.add("blue");
-            document.getElementsByClassName(classBlock)[1].classList.remove("yellow");
+            document.getElementsByClassName(classBlock)[1].classList.remove("red");
             document.getElementsByClassName(classBlock)[1].classList.add("blue");
         } else if (document.getElementById(id).classList.contains("blue")) {
             document.getElementsByClassName(classBlock)[0].classList.remove("blue");
-            document.getElementsByClassName(classBlock)[0].classList.add("red");
+            document.getElementsByClassName(classBlock)[0].classList.add("yellow");
             document.getElementsByClassName(classBlock)[1].classList.remove("blue");
+            document.getElementsByClassName(classBlock)[1].classList.add("yellow");
+        } else if (document.getElementById(id).classList.contains("yellow")) {
+            document.getElementsByClassName(classBlock)[0].classList.remove("yellow");
+            document.getElementsByClassName(classBlock)[0].classList.add("black");
+            document.getElementsByClassName(classBlock)[1].classList.remove("yellow");
+            document.getElementsByClassName(classBlock)[1].classList.add("black");
+        } else if (document.getElementById(id).classList.contains("black")) {
+            document.getElementsByClassName(classBlock)[0].classList.remove("black");
+            document.getElementsByClassName(classBlock)[0].classList.add("red");
+            document.getElementsByClassName(classBlock)[1].classList.remove("black");
             document.getElementsByClassName(classBlock)[1].classList.add("red");
         }
         statesCount();
     }
     const statesCount = () => {
-        let red = document.getElementsByClassName("red").length;
-        let blue = document.getElementsByClassName("blue").length;
-        let green = document.getElementsByClassName("green").length;
-        let yellow = document.getElementsByClassName("yellow").length;
+        let red = document.getElementsByClassName("red");
+        let blue = document.getElementsByClassName("blue");
+        let black = document.getElementsByClassName("black");
+        let yellow = document.getElementsByClassName("yellow");
         setCount({
             ...count,
-            red : red,
+            red: red,
             blue: blue,
-            green: green,
+            black: black,
             yellow: yellow
         });
+        console.log(count);
     }
     const hoverHandle = (block) => {
         setCount({
@@ -65,8 +68,12 @@ function App() {
     return (
         <div>
             <Map taskReturn={hoverHandle} colorChange={handleClick}/>
-            <Task block={count}/>
             <Progress statesVotes={count}/>
+            <Task block={count}/>
+            <ResourcesDisplay teamName="Республиканцы" teamColor="red" stateVotesArray={count.red} block={count}/>
+            <ResourcesDisplay teamName="Демократы" teamColor="blue" stateVotesArray={count.blue} block={count}/>
+            <ResourcesDisplay teamName="Либертирианцы" teamColor="yellow" stateVotesArray={count.yellow} block={count}/>
+            <ResourcesDisplay teamName="Анархисты" teamColor="black" stateVotesArray={count.black} block={count}/>
         </div>
     );
 }

@@ -6,8 +6,8 @@ export const Progress = (props) => {
         <div className="progress-background">
             <div className="progress">
                 <div className="progress_state-name">Республиканцы</div>
-                <div className="progress_state-votes"> {props.statesVotes.red} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.red} styles = {{
+                <div className="progress_state-votes"> {props.statesVotes.red.length} </div>
+                <ProgressBarLine text = " " max={50} value={props.statesVotes.red.length} styles = {{
                     path: {
                         stroke: 'red'
                     }
@@ -15,17 +15,17 @@ export const Progress = (props) => {
             </div>
             <div className="progress">
                 <div className="progress_state-name">Демократы</div>
-                <div className="progress_state-votes"> {props.statesVotes.blue} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.blue} styles = {{
+                <div className="progress_state-votes"> {props.statesVotes.blue.length} </div>
+                <ProgressBarLine text = " " max={50} value={props.statesVotes.blue.length} styles = {{
                     path: {
                         stroke: 'blue'
                     }
                 }}/>
             </div>
             <div className="progress">
-                <div className="progress_state-name">Либертианцы</div>
-                <div className="progress_state-votes"> {props.statesVotes.yellow} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.yellow} styles = {{
+                <div className="progress_state-name">Либертирианцы</div>
+                <div className="progress_state-votes"> {props.statesVotes.yellow.length} </div>
+                <ProgressBarLine text = " " max={50} value={props.statesVotes.yellow.length} styles = {{
                     path: {
                         stroke: 'yellow'
                     }
@@ -33,10 +33,10 @@ export const Progress = (props) => {
             </div>
             <div className="progress">
                 <div className="progress_state-name">Анархисты</div>
-                <div className="progress_state-votes"> {props.statesVotes.green} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.green} styles = {{
+                <div className="progress_state-votes"> {props.statesVotes.black.length} </div>
+                <ProgressBarLine text = " " max={50} value={props.statesVotes.black.length} styles = {{
                     path: {
-                        stroke: 'green'
+                        stroke: 'black'
                     }
                 }}/>
             </div>
