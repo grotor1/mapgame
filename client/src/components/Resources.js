@@ -12,19 +12,9 @@ export const ResourcesDisplay = (props) => {
         }
         return -1;
     }
-    const sortByBlock = (a, b) => {
-        if (a.classList[0] < b.classList[0]) {
-            return -1;
-        }
-        if (a.classList[0] > b.classList[0]) {
-            return 1;
-        }
-        return 0;
-    }
     let teamName = props.teamName;
-    let statesNonFiltered = Array.from(props.stateVotesArray).sort((a,b) => sortByBlock(a,b));
-    let states = statesNonFiltered.filter((item, index) => {
-        return findWithAttr(statesNonFiltered, item.classList[0]) === index;
+    let states = props.stateVotesArray.filter((item, index) => {
+        return findWithAttr(props.stateVotesArray, item.classList[0]) === index;
     })
     console.log(states)
     return (
@@ -35,7 +25,7 @@ export const ResourcesDisplay = (props) => {
                     item_j.block === item_i.classList[0]
                 ).map((item_k) => (
                         <Draggable>
-                            <div>
+                            <div className="resourcesDisplay_resources">
                                 {item_k.resources}
                             </div>
                         </Draggable>

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
+import {oldArrays} from "./db";
 import {Map} from './components/Map';
 import {Task} from "./components/Task";
 import {Progress} from "./components/Progress";
@@ -14,7 +15,6 @@ function App() {
         black: [],
         yellow: []
     });
-
     const handleClick = (id) => {
         const classBlock = document.getElementById(id).classList[0];
         if (document.getElementById(id).classList.contains("grey")) {
@@ -45,20 +45,48 @@ function App() {
         }
         statesCount();
     }
-    const statesCount = () => {
-        let red = document.getElementsByClassName("red");
-        let blue = document.getElementsByClassName("blue");
-        let black = document.getElementsByClassName("black");
-        let yellow = document.getElementsByClassName("yellow");
+    const arraysMerge = (countArray, array, oldArray) => {
+        if (countArray.length === 0) {
+            return array;
+        } else if (array.length > oldArray.length) {
+            console.log(oldArray);
+            console.log(array);
+            let arrayToMerge = [];
+            let j = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] !== oldArray[j]) {
+                    arrayToMerge.push(array[i]);
+                    console.log(arrayToMerge);
+                } else {
+                    j++;
+                }
+            }
+            console.log(countArray.concat(arrayToMerge))
+            return countArray.concat(arrayToMerge);
+        } else {
+            return array;
+        }
+    }
+    function statesCount () {
+        let red = Array.from(document.getElementsByClassName("red"));
+        let blue = Array.from(document.getElementsByClassName("blue"));
+        let black = Array.from(document.getElementsByClassName("black"));
+        let yellow = Array.from(document.getElementsByClassName("yellow"));
+        let newRed = arraysMerge(count.red, red, oldArrays.oldRed);
+        let newBlue = arraysMerge(count.blue, blue, oldArrays.oldBlue);
+        let newBlack = arraysMerge(count.black, black, oldArrays.oldBlack);
+        let newYellow = arraysMerge(count.yellow, yellow, oldArrays.oldYellow);
+        oldArrays.oldRed = [...red];
+        oldArrays.oldBlue = [...blue];
+        oldArrays.oldBlack = [...black];
+        oldArrays.oldYellow = [...yellow];
         setCount({
             ...count,
-            red: red,
-            blue: blue,
-            black: black,
-            yellow: yellow
-        });
-        console.log(count);
-    }
+            red: newRed,
+            blue: newBlue,
+            black: newBlack,
+            yellow: newYellow
+        });}
     const hoverHandle = (block) => {
         setCount({
             ...count,
@@ -67,13 +95,17 @@ function App() {
     }
     return (
         <div>
-            <Map taskReturn={hoverHandle} colorChange={handleClick}/>
-            <Progress statesVotes={count}/>
-            <Task block={count}/>
-            <ResourcesDisplay teamName="Республиканцы" teamColor="red" stateVotesArray={count.red} block={count}/>
-            <ResourcesDisplay teamName="Демократы" teamColor="blue" stateVotesArray={count.blue} block={count}/>
-            <ResourcesDisplay teamName="Либертирианцы" teamColor="yellow" stateVotesArray={count.yellow} block={count}/>
-            <ResourcesDisplay teamName="Анархисты" teamColor="black" stateVotesArray={count.black} block={count}/>
+            <div className="map">
+                <Map taskReturn={hoverHandle} colorChange={handleClick}/>
+                <Progress statesVotes={count}/>
+                <Task block={count}/>
+            </div>
+            <div className="prikol">
+                <ResourcesDisplay teamName="Республиканцы" teamColor="red" stateVotesArray={count.red} block={count}/>
+                <ResourcesDisplay teamName="Демократы" teamColor="blue" stateVotesArray={count.blue} block={count}/>
+                <ResourcesDisplay teamName="Либертирианцы" teamColor="yellow" stateVotesArray={count.yellow}/>
+                <ResourcesDisplay teamName="Анархисты" teamColor="black" stateVotesArray={count.black} block={count}/>
+            </div>
         </div>
     );
 }

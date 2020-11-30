@@ -1,3 +1,10 @@
+export let oldArrays = {
+    oldRed:[],
+    oldBlue:[],
+    oldBlack:[],
+    oldYellow:[],
+}
+
 export const tasks = [
     {
         state1: "Вашингтон",
