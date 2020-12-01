@@ -67,7 +67,8 @@ function App() {
             return array;
         }
     }
-    function statesCount () {
+
+    function statesCount() {
         let red = Array.from(document.getElementsByClassName("red"));
         let blue = Array.from(document.getElementsByClassName("blue"));
         let black = Array.from(document.getElementsByClassName("black"));
@@ -86,12 +87,25 @@ function App() {
             blue: newBlue,
             black: newBlack,
             yellow: newYellow
-        });}
+        });
+    }
+
     const hoverHandle = (block) => {
         setCount({
             ...count,
             block: block
         });
+    }
+    const handleClick2 = (event, eventTarget) => {
+        console.log(event)
+        if (event.button === 1) {
+            console.log("ok");
+            if (eventTarget.style.display === "none") {
+                eventTarget.style.display = "block";
+            } else {
+                eventTarget.style.display = "none";
+            }
+        }
     }
     return (
         <div>
@@ -100,11 +114,15 @@ function App() {
                 <Progress statesVotes={count}/>
                 <Task block={count}/>
             </div>
-            <div className="prikol">
-                <ResourcesDisplay teamName="Республиканцы" teamColor="red" stateVotesArray={count.red} block={count}/>
-                <ResourcesDisplay teamName="Демократы" teamColor="blue" stateVotesArray={count.blue} block={count}/>
-                <ResourcesDisplay teamName="Либертирианцы" teamColor="yellow" stateVotesArray={count.yellow}/>
-                <ResourcesDisplay teamName="Анархисты" teamColor="black" stateVotesArray={count.black} block={count}/>
+            <div className="resources">
+                <ResourcesDisplay teamName="Республиканцы" teamColor="red" hideResource={handleClick2}
+                                  stateVotesArray={count.red} block={count}/>
+                <ResourcesDisplay teamName="Демократы" teamColor="blue" hideResource={handleClick2}
+                                  stateVotesArray={count.blue} block={count}/>
+                <ResourcesDisplay teamName="Либертирианцы" teamColor="yellow" hideResource={handleClick2}
+                                  stateVotesArray={count.yellow}/>
+                <ResourcesDisplay teamName="Анархисты" teamColor="black" hideResource={handleClick2}
+                                  stateVotesArray={count.black} block={count}/>
             </div>
         </div>
     );

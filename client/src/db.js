@@ -183,3 +183,10 @@ export const tasks = [
     },
 
 ];
+
+export const teamsResources = {
+    red : ["sdaaaaaaaaaaaaa"],
+    blue : ["asdasdasddsd"],
+    black : ["dsasdasdasssss"],
+    yellow : ["asdasdasdasdd"]
+}
