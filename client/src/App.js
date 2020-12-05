@@ -8,6 +8,7 @@ import {ResourcesDisplay} from "./components/Resources";
 
 
 function App() {
+    window.onbeforeunload = function() {return false};
     const [count, setCount] = useState({
         block: "",
         blue: [],
