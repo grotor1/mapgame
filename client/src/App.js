@@ -104,7 +104,7 @@ function App() {
             if (eventTarget.style.display === "none") {
                 eventTarget.style.display = "block";
             } else {
-                eventTarget.style.display = "none";
+                eventTarget.style.display= "none";
             }
         }
     }

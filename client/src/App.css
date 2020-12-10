@@ -19,25 +19,25 @@ body {
     padding-right: 2%;
 }
 
-.map{
+.map {
     margin-top: 2%;
     height: 92vh;
 }
 
 .red {
-    fill: red;
+    fill: #FF0000;
 }
 
 .yellow {
-    fill: yellow;
+    fill: #FFFF66;
 }
 
 .blue {
-    fill: blue;
+    fill: #0000CC;
 }
 
 .black {
-    fill: black;
+    fill: #333333;
 }
 
 .cls-1 {
@@ -50,8 +50,7 @@ body {
 }
 
 
-
-.progress-background{
+.progress-background {
     background-color: #f4f4f4;
     float: right;
     display: block;
@@ -61,14 +60,14 @@ body {
     padding-bottom: 1%;
 }
 
-.progress_state-name{
+.progress_state-name {
     float: left;
     display: block;
     margin-bottom: 5%;
     font-size: 2.5vh;
 }
 
-.progress_state-votes{
+.progress_state-votes {
     margin-right: 7%;
     display: block;
     margin-bottom: 5%;
@@ -76,7 +75,7 @@ body {
     font-size: 2.5vh;
 }
 
-.progress{
+.progress {
     display: inline-block;
     margin-left: 5%;
     margin-top: 3%;
@@ -99,12 +98,12 @@ body {
     font-size: 2.5vh;
 }
 
-.task_task{
+.task_task {
     margin: 3% 5% 0;
     font-size: 1.5vh;
 }
 
-.resourcesDisplay_background{
+.resourcesDisplay_background {
     background-color: #f4f4f4;
     display: block;
     float: left;
@@ -114,20 +113,20 @@ body {
     margin-bottom: 2%;
 }
 
-.resourcesDisplay_state-name{
+.resourcesDisplay_state-name {
     margin: 3% 5% 0;
     font-size: 2.5vh;
 }
 
-.resourcesDisplay_resources{
+.resourcesDisplay_resources {
     margin: 3% 5% 0;
     font-size: 1.5vh;
 }
 
-.resources{
+.resources {
     margin-top: 2.5%;
 }
 
-.hidden{
+.hidden {
     visibility: hidden;
 }

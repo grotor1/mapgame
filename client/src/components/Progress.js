@@ -9,7 +9,7 @@ export const Progress = (props) => {
                 <div className="progress_state-votes"> {props.statesVotes.red.length} </div>
                 <ProgressBarLine text = " " max={50} value={props.statesVotes.red.length} styles = {{
                     path: {
-                        stroke: 'red'
+                        stroke: '#FF0000'
                     }
                 }}/>
             </div>
@@ -18,7 +18,7 @@ export const Progress = (props) => {
                 <div className="progress_state-votes"> {props.statesVotes.blue.length} </div>
                 <ProgressBarLine text = " " max={50} value={props.statesVotes.blue.length} styles = {{
                     path: {
-                        stroke: 'blue'
+                        stroke: '#0000CC'
                     }
                 }}/>
             </div>
@@ -27,7 +27,7 @@ export const Progress = (props) => {
                 <div className="progress_state-votes"> {props.statesVotes.yellow.length} </div>
                 <ProgressBarLine text = " " max={50} value={props.statesVotes.yellow.length} styles = {{
                     path: {
-                        stroke: 'yellow'
+                        stroke: '#FFFF66'
                     }
                 }}/>
             </div>
@@ -36,7 +36,7 @@ export const Progress = (props) => {
                 <div className="progress_state-votes"> {props.statesVotes.black.length} </div>
                 <ProgressBarLine text = " " max={50} value={props.statesVotes.black.length} styles = {{
                     path: {
-                        stroke: 'black'
+                        stroke: '#333333'
                     }
                 }}/>
             </div>

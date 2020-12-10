@@ -22,7 +22,7 @@ export const ResourcesDisplay = (props) => {
 
             </div>
             {teamsResources[props.teamColor].map((item) => (
-                <div onMouseDown={(event) => props.hideResource(event, event.currentTarget)}>
+                <div>
                     <Draggable>
                         <div
                             className="resourcesDisplay_resources">
