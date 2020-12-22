@@ -1,5 +1,5 @@
 import React from 'react';
-import {tasks, teamsResources} from "../db";
+import {states, teamsResources} from "../db";
 import Draggable from "react-draggable";
 
 export const ResourcesDisplay = (props) => {
@@ -32,7 +32,7 @@ export const ResourcesDisplay = (props) => {
                 </div>
             ))}
             {states.map((item_i) =>
-                tasks.filter((item_j) =>
+                states.filter((item_j) =>
                     item_j.block === item_i.classList[0]
                 ).map((item_k) => (
                         <div onMouseDown={(event) => props.hideResource(event, event.currentTarget)}>

@@ -5,8 +5,10 @@ export let oldArrays = {
     oldYellow: [],
 }
 
-export const tasks = [
+export const states = [
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Вашингтон",
         state2: "Орегон",
         block: "block-1",
@@ -14,6 +16,8 @@ export const tasks = [
         resources: "Запасы леса"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Калифорния",
         state2: "Невада",
         block: "block-2",
@@ -21,6 +25,8 @@ export const tasks = [
         resources: "Современные технологии в области информационной безопасности"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Айдахо",
         state2: "Монтана",
         block: "block-5",
@@ -28,6 +34,8 @@ export const tasks = [
         resources: "Технологии сельского хозяйства и лесодобычи"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Юта",
         state2: "Аризона",
         block: "block-4",
@@ -35,6 +43,8 @@ export const tasks = [
         resources: "Технологии крионики фирмы Alcor"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Вайоминг",
         state2: "Колорадо",
         block: "block-6",
@@ -42,6 +52,8 @@ export const tasks = [
         resources: "Залежи природного топлива"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Нью Мехико",
         state2: "Техас",
         block: "block-7",
@@ -49,6 +61,8 @@ export const tasks = [
         resources: "Хорошо вооруженное народное ополчение"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Северная Дакота",
         state2: "Южная Дакота",
         block: "block-9",
@@ -56,6 +70,8 @@ export const tasks = [
         resources: "Способы привлечения туристы"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Канзас",
         state2: "Оклахома",
         block: "block-8",
@@ -63,6 +79,8 @@ export const tasks = [
         resources: "Меры по борьбе с климатическими бедствиям"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Небраска",
         state2: "Айова",
         block: "block-10",
@@ -70,6 +88,8 @@ export const tasks = [
         resources: "Технологии альтернативных источников энергии"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Миннесота",
         state2: "Висконсин",
         block: "block-11",
@@ -77,6 +97,8 @@ export const tasks = [
         resources: "Технологии мореплавания"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Миссури",
         state2: "Иллиноис",
         block: "block-12",
@@ -84,6 +106,8 @@ export const tasks = [
         resources: "Технологии ядерной энергетики"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Арканзас",
         state2: "Луизиана",
         block: "block-13",
@@ -91,6 +115,8 @@ export const tasks = [
         resources: "Технологии борьбы с наркокартелями"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Мичиган",
         state2: "Индиана",
         block: "block-16",
@@ -98,6 +124,8 @@ export const tasks = [
         resources: "Машиностроительные технологи"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Кентукки",
         state2: "Теннесси",
         block: "block-15",
@@ -105,6 +133,8 @@ export const tasks = [
         resources: "Часть золотого запаса США"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Миссиссиппи",
         state2: "Алабама",
         block: "block-14",
@@ -112,6 +142,8 @@ export const tasks = [
         resources: "Запасы пресной воды"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Джорджия",
         state2: "Флорида",
         block: "block-17",
@@ -119,6 +151,8 @@ export const tasks = [
         resources: "Способы либерализации ВУЗов"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Южная Каролина",
         state2: "Северная Каролина",
         block: "block-18",
@@ -126,6 +160,8 @@ export const tasks = [
         resources: "Технологии производства хлопка"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Вирджиния",
         state2: "Мерилэнд",
         block: "block-20",
@@ -133,6 +169,8 @@ export const tasks = [
         resources: "Технологии производства табака"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Огайо",
         state2: "Западная Вирджиния",
         block: "block-19",
@@ -140,6 +178,8 @@ export const tasks = [
         resources: "Знания о культуре индейцев"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Пенсильвания",
         state2: "Нью-Йорк",
         block: "block-22",
@@ -147,6 +187,8 @@ export const tasks = [
         resources: "Законопроекты по организации жизни представителей различных этносов"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Делавер",
         state2: "Нью Джерси",
         block: "block-21",
@@ -154,6 +196,8 @@ export const tasks = [
         resources: "Технологии промышленного и военного мореходства"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Мэн",
         state2: "Нью Хемпшир",
         block: "block-23",
@@ -161,6 +205,8 @@ export const tasks = [
         resources: "Запасы леса"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Вермонт",
         state2: "Массачусец",
         block: "block-24",
@@ -168,6 +214,8 @@ export const tasks = [
         resources: "Законопроекты  о свободной продаже оружия"
     },
     {
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Коннектикут",
         state2: "Род Айленд",
         block: "block-25",
@@ -175,6 +223,9 @@ export const tasks = [
         resources: "Технологии высшего образования"
     },
     {
+
+        resourceOwner: "grey",
+        voteOwner: "grey",
         state1: "Гаваи",
         state2: "Аляска",
         block: "block-3",

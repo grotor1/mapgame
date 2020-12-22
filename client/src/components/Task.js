@@ -1,10 +1,10 @@
 import React from "react";
-import {tasks} from "../db";
+import {states} from "../db";
 
 export const Task = (props) => {
     return (
         <div className="task-background">
-            {tasks.filter((item) =>
+            {states.filter((item) =>
                 item.block === props.block.block
             ).map((item) => (
                     <div>
