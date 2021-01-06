@@ -1,45 +1,59 @@
 import React from "react";
 import {ProgressBarLine} from "react-progressbar-line";
 
-export const Progress = (props) => {
-    return (
-        <div className="progress-background">
-            <div className="progress">
-                <div className="progress_state-name">Республиканцы</div>
-                <div className="progress_state-votes"> {props.statesVotes.red.length} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.red.length} styles = {{
-                    path: {
-                        stroke: '#FF0000'
-                    }
-                }}/>
+export class Progress extends React.Component {
+    render() {
+        let red = this.props.votes.filter((item) => {
+            return item.voteOwner === "red"
+        }).length * 2;
+        let blue = this.props.votes.filter((item) => {
+            return item.voteOwner === "blue"
+        }).length * 2;
+        let black = this.props.votes.filter((item) => {
+            return item.voteOwner === "black"
+        }).length * 2;
+        let yellow = this.props.votes.filter((item) => {
+            return item.voteOwner === "yellow"
+        }).length * 2;
+        return (
+            <div className="progress-background">
+                <div className="progress">
+                    <div className="progress_state-name">Республиканцы</div>
+                    <div className="progress_state-votes"> {red} </div>
+                    <ProgressBarLine text=" " max={50} value={red} styles={{
+                        path: {
+                            stroke: '#FF0000'
+                        }
+                    }}/>
+                </div>
+                <div className="progress">
+                    <div className="progress_state-name">Демократы</div>
+                    <div className="progress_state-votes"> {blue} </div>
+                    <ProgressBarLine text=" " max={50} value={blue} styles={{
+                        path: {
+                            stroke: '#0000CC'
+                        }
+                    }}/>
+                </div>
+                <div className="progress">
+                    <div className="progress_state-name">Либертирианцы</div>
+                    <div className="progress_state-votes"> {yellow} </div>
+                    <ProgressBarLine text=" " max={50} value={yellow} styles={{
+                        path: {
+                            stroke: '#FFFF66'
+                        }
+                    }}/>
+                </div>
+                <div className="progress">
+                    <div className="progress_state-name">Анархисты</div>
+                    <div className="progress_state-votes"> {black} </div>
+                    <ProgressBarLine text=" " max={50} value={black} styles={{
+                        path: {
+                            stroke: '#333333'
+                        }
+                    }}/>
+                </div>
             </div>
-            <div className="progress">
-                <div className="progress_state-name">Демократы</div>
-                <div className="progress_state-votes"> {props.statesVotes.blue.length} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.blue.length} styles = {{
-                    path: {
-                        stroke: '#0000CC'
-                    }
-                }}/>
-            </div>
-            <div className="progress">
-                <div className="progress_state-name">Либертирианцы</div>
-                <div className="progress_state-votes"> {props.statesVotes.yellow.length} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.yellow.length} styles = {{
-                    path: {
-                        stroke: '#FFFF66'
-                    }
-                }}/>
-            </div>
-            <div className="progress">
-                <div className="progress_state-name">Анархисты</div>
-                <div className="progress_state-votes"> {props.statesVotes.black.length} </div>
-                <ProgressBarLine text = " " max={50} value={props.statesVotes.black.length} styles = {{
-                    path: {
-                        stroke: '#333333'
-                    }
-                }}/>
-            </div>
-        </div>
-    );
+        );
+    }
 }

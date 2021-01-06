@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-//window.onbeforeunload = function() {return false};
+window.onbeforeunload = function() {return false};
 ReactDOM.render(
   <React.StrictMode>
     <App />

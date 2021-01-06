@@ -1,3 +1,4 @@
+
 export let oldArrays = {
     oldRed: [],
     oldBlue: [],
@@ -67,7 +68,7 @@ export const states = [
         state2: "Южная Дакота",
         block: "block-9",
         task: "Увеличить размер национальных парков",
-        resources: "Способы привлечения туристы"
+        resources: "Способы привлечения туристов"
     },
     {
         resourceOwner: "grey",

@@ -1,89 +1,100 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import {states} from "./db";
 import {Map} from './components/Map';
+import {Progress} from "./components/Progress";
+import {Task} from "./components/Task";
+import {ResourcesDisplay} from "./components/Resources";
 
-
-function App() {
-    const [count, setCount] = useState({
-        block: "",
-    });
-    const handleClickMiddle1 = (block) => {
-        let blockStates = states.find((item) => {
-            return item.block === block
-        })
-        if (blockStates.voteOwner === "grey") {
-            blockStates.voteOwner = "red";
-        } else if (blockStates.voteOwner === "red") {
-            blockStates.voteOwner = "blue";
-        } else if (blockStates.voteOwner === "blue") {
-            blockStates.voteOwner = "yellow";
-        } else if (blockStates.voteOwner === "yellow") {
-            blockStates.voteOwner = "black";
-        } else if (blockStates.voteOwner === "black") {
-            blockStates.voteOwner = "grey";
-        }
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            states: states,
+            resourceDisplay: ""
+        };
     }
-    const arraysMerge = (countArray, array, oldArray) => {
-        if (countArray.length === 0) {
-            return array;
-        } else if (array.length > oldArray.length) {
-            console.log(oldArray);
-            console.log(array);
-            let arrayToMerge = [];
-            let j = 0;
-            for (let i = 0; i < array.length; i++) {
-                if (array[i] !== oldArray[j]) {
-                    arrayToMerge.push(array[i]);
-                    console.log(arrayToMerge);
-                } else {
-                    j++;
+
+    render() {
+        document.body.onmousedown = function(e) { if (e.button === 1) return false; }
+        const eventHandler = (event, eventTarget) => {
+            let block = eventTarget.classList[0];
+            let blockStates = states.find((item) => {
+                return item.block === block
+            });
+            if (event.button === 0) {
+                this.setState({
+                    ...this.state,
+                    resourceDisplay: block}
+                );
+            } else if (event.button === 1) {
+                if (blockStates.voteOwner === "grey") {
+                    blockStates.voteOwner = "red";
+                    blockStates.resourceOwner = "red";
+                } else if (blockStates.voteOwner === "red") {
+                    blockStates.voteOwner = "blue";
+                    blockStates.resourceOwner = "blue";
+                } else if (blockStates.voteOwner === "blue") {
+                    blockStates.voteOwner = "yellow";
+                    blockStates.resourceOwner = "yellow";
+                } else if (blockStates.voteOwner === "yellow") {
+                    blockStates.voteOwner = "black";
+                    blockStates.resourceOwner = "black";
+                } else if (blockStates.voteOwner === "black") {
+                    blockStates.voteOwner = "grey";
+                    blockStates.resourceOwner = "grey";
                 }
+                this.setState({
+                    ...this.state,
+                    states: states
+                });
+            } else if (event.button === 4) {
+                if ("grey" === blockStates.resourceOwner) {
+                    blockStates.resourceOwner = "red";
+                } else if (blockStates.resourceOwner === "red") {
+                    blockStates.resourceOwner = "blue";
+                } else if (blockStates.resourceOwner === "blue") {
+                    blockStates.resourceOwner = "yellow";
+                } else if (blockStates.resourceOwner === "yellow") {
+                    blockStates.resourceOwner = "black";
+                } else if (blockStates.resourceOwner === "black") {
+                    blockStates.resourceOwner = "grey";
+                }
+                this.setState({
+                    ...this.state,
+                    states: states
+                });
             }
-            console.log(countArray.concat(arrayToMerge))
-            return countArray.concat(arrayToMerge);
-        } else {
-            return array;
+            console.log(this.state.states);
         }
-    }
-    const handleHoverClickRight = (block) => {
-        // setCount({
-        //     ...count,
-        //     block: block
-        // });
-    }
-    const handleClickMiddle2 = (event, eventTarget) => {
-        console.log(event)
-        if (event.button === 1) {
-            console.log("ok");
-            if (eventTarget.style.display === "none") {
-                eventTarget.style.display = "block";
-            } else {
-                eventTarget.style.display = "none";
-            }
-        }
-    }
-    return (
-        <div>
-            <div className="map">
-                <Map votes={states.map((item) => {
-                    return {voteOwner: item.voteOwner, block: item.block}
-                })} taskReturn={handleHoverClickRight} colorChange={handleClickMiddle1}/>
-                {/*<Progress statesVotes={count}/>*/}
-                {/*<Task block={count}/>*/}
+        return (
+            <div>
+                <div className="map">
+                    <Map votes={this.state.states.map((item) => {
+                        return {voteOwner: item.voteOwner, block: item.block}
+                    })} eventReturn={eventHandler}/>
+                    <Progress votes={this.state.states.map((item) => {
+                        return {voteOwner: item.voteOwner}
+                    })}/>
+                    <Task block={this.state.resourceDisplay}/>
+                </div>
+                <div className="resources">
+                    <ResourcesDisplay teamName="Республиканцы" teamColor="red" votes={this.state.states.map((item) => {
+                        return {resourceOwner: item.resourceOwner, resources:item.resources}
+                    })}/>
+                    <ResourcesDisplay teamName="Демократы" teamColor="blue" votes={this.state.states.map((item) => {
+                        return {resourceOwner: item.resourceOwner, resources:item.resources}
+                    })}/>
+                    <ResourcesDisplay teamName="Либертирианцы" teamColor="yellow" votes={this.state.states.map((item) => {
+                        return {resourceOwner: item.resourceOwner, resources:item.resources}
+                    })}/>
+                    <ResourcesDisplay teamName="Анархисты" teamColor="black" votes={this.state.states.map((item) => {
+                        return {resourceOwner: item.resourceOwner, resources:item.resources}
+                    })}/>
+                </div>
             </div>
-            {/*<div className="resources">*/}
-            {/*    <ResourcesDisplay teamName="Республиканцы" teamColor="red" hideResource={handleClickMiddle2}*/}
-            {/*                      stateVotesArray={count.red} block={count}/>*/}
-            {/*    <ResourcesDisplay teamName="Демократы" teamColor="blue" hideResource={handleClickMiddle2}*/}
-            {/*                      stateVotesArray={count.blue} block={count}/>*/}
-            {/*    <ResourcesDisplay teamName="Либертирианцы" teamColor="yellow" hideResource={handleClickMiddle2}*/}
-            {/*                      stateVotesArray={count.yellow}/>*/}
-            {/*    <ResourcesDisplay teamName="Анархисты" teamColor="black" hideResource={handleClickMiddle2}*/}
-            {/*                      stateVotesArray={count.black} block={count}/>*/}
-            {/*</div>*/}
-        </div>
-    );
+        );
+    }
 }
 
 export default App;
