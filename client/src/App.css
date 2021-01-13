@@ -120,7 +120,7 @@ body {
 
 .resourcesDisplay_resources {
     margin: 3% 5% 0;
-    font-size: 1.5vh;
+    font-size: 2vh;
 }
 
 .resources {
@@ -129,4 +129,10 @@ body {
 
 .hidden {
     visibility: hidden;
+}
+
+@media (orientation: portrait) {
+    body {
+        transform: rotate(-90deg);
+    }
 }

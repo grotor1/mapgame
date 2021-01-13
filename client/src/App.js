@@ -16,7 +16,6 @@ class App extends React.Component {
     }
 
     render() {
-        document.body.onmousedown = function(e) { if (e.button === 1) return false; }
         const eventHandler = (event, eventTarget) => {
             let block = eventTarget.classList[0];
             let blockStates = states.find((item) => {
