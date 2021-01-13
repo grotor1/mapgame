@@ -1,11 +1,3 @@
-
-export let oldArrays = {
-    oldRed: [],
-    oldBlue: [],
-    oldBlack: [],
-    oldYellow: [],
-}
-
 export const states = [
     {
         resourceOwner: "grey",

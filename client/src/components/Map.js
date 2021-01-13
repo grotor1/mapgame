@@ -2,7 +2,6 @@ import React from "react";
 
 export class Map extends React.Component {
     render() {
-        console.log(1);
         return (
             <div className="map-background">
                 <svg className="map-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1035.23 722.8">

@@ -3,14 +3,7 @@ import {teamsResources} from "../db";
 
 export class ResourcesDisplay extends React.Component {
     render() {
-        const findWithAttr = (array, value) => {
-            for (let i = 0; i < array.length; i += 1) {
-                if (array[i].classList[0] === value) {
-                    return i;
-                }
-            }
-            return -1;
-        }
+
         let teamName = this.props.teamName;
         let states = this.props.votes.filter((item) => {
             return item.resourceOwner === this.props.teamColor;

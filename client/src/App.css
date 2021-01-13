@@ -84,7 +84,6 @@ body {
 }
 
 .task-background {
-    margin-top: 8.4%;
     background-color: #f4f4f4;
     display: block;
     float: right;
@@ -101,6 +100,32 @@ body {
 .task_task {
     margin: 3% 5% 0;
     font-size: 1.5vh;
+}
+
+.changers-background {
+    background-color: #f4f4f4;
+    display: block;
+    float: right;
+    margin-right: 2%;
+    width: 18%;
+    height: 18%;
+}
+
+.changers_change-button{
+    background-color: #323232;
+    display: block;
+    float: left;
+    width: 44%;
+    height: 50%;
+    margin-left: 4%;
+    margin-top: 10%;
+    color: #f4f4f4;
+    text-align: center;
+    font-size: 2vh;
+}
+
+.changers_button-text{
+    margin-top: 16.5%;
 }
 
 .resourcesDisplay_background {
@@ -131,8 +156,11 @@ body {
     visibility: hidden;
 }
 
-@media (orientation: portrait) {
-    body {
-        transform: rotate(-90deg);
+@media not screen and (max-width: 1200px) {
+    .changers-background {
+        display: none;
+    }
+    .task-background{
+        margin-top: 8.5%;
     }
 }
