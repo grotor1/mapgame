@@ -2,6 +2,18 @@ import React from "react";
 
 export class Map extends React.Component {
     render() {
+        if (this.props.currentTap !== "") {
+            const unBlackedElement = document.getElementsByClassName("blacked");
+            const blackedElement = document.getElementsByClassName(this.props.currentTap);
+            console.log(unBlackedElement);
+            if (unBlackedElement.length !== 0) {
+                unBlackedElement[0].classList.remove("blacked");
+                unBlackedElement[0].classList.remove("blacked");
+            }
+            blackedElement[0].classList.add("blacked");
+            blackedElement[1].classList.add("blacked");
+            console.log(blackedElement);
+        }
         return (
             <div className="map-background">
                 <svg className="map-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1035.23 722.8">
