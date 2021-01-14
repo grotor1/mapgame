@@ -45,6 +45,10 @@ body {
     stroke-width: 2px;
 }
 
+.blacked{
+    opacity: 0.75;
+}
+
 .grey {
     fill: #ccc;
 }
@@ -154,13 +158,4 @@ body {
 
 .hidden {
     visibility: hidden;
-}
-
-@media not screen and (max-width: 1200px) {
-    .changers-background {
-        display: none;
-    }
-    .task-background{
-        margin-top: 8.5%;
-    }
 }
