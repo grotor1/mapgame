@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import {states} from "./db";
-import 'whatwg-fetch';
 import {Map} from './components/Map';
 import {Progress} from "./components/Progress";
 import {Task} from "./components/Task";
@@ -12,35 +11,14 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            error: null,
             states: states,
             resourceDisplay: ""
         };
-        this.pollInterval = null;
-    }
-    componentDidMount() {
-        console.log(0);
-        this.loadCommentsFromServer();
-        if (!this.pollInterval) {
-            this.pollInterval = setInterval(this.loadCommentsFromServer, 2000);
-        }
     }
 
-    componentWillUnmount() {
-        if (this.pollInterval) clearInterval(this.pollInterval);
-        this.pollInterval = null;
-    }
-
-    loadCommentsFromServer = () => {
-        fetch('/api')
-            .then(data => data.json())
-            .then((res) => {
-                if (!res.success) this.setState({...this.state, error: res.error });
-                else this.setState({...this.state, states: res.data });
-            });
-    }
     render() {
         const eventHandler = (event, eventTarget) => {
+            console.log(event);
             let block = eventTarget.classList[0];
             let blockStates = states.find((item) => {
                 return item.block === block
@@ -142,7 +120,7 @@ class App extends React.Component {
         return (
             <div>
                 <div className="map">
-                    <Map votes={this.state.states.map((item) => {
+                    <Map currentTap = {this.state.resourceDisplay} votes={this.state.states.map((item) => {
                         return {voteOwner: item.voteOwner, block: item.block}
                     })} eventReturn={eventHandler}/>
                     <Progress votes={this.state.states.map((item) => {
@@ -166,9 +144,7 @@ class App extends React.Component {
                         return {resourceOwner: item.resourceOwner, resources: item.resources}
                     })}/>
                 </div>
-                {this.state.error && <p>{this.state.error}</p>}
             </div>
-
         );
     }
 }
