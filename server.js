@@ -7,7 +7,7 @@ require('dotenv').config()
 
 const app = express();
 
-const  API_PORT = process.env.API_PORT || 3000;
+const  PORT = process.env.PORT || 3000;
 
 // Adds json parsing middleware
 app.use(express.json());
@@ -20,4 +20,4 @@ app.get('*', (req, res) => {
 });
 
 // console.log that your server is up and running
-app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
