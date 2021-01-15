@@ -45,10 +45,6 @@ body {
     stroke-width: 2px;
 }
 
-.blacked{
-    opacity: 0.75;
-}
-
 .grey {
     fill: #ccc;
 }
@@ -150,6 +146,10 @@ body {
 .resourcesDisplay_resources {
     margin: 3% 5% 0;
     font-size: 2vh;
+}
+
+.blacked{
+    opacity: 0.75;
 }
 
 .resources {

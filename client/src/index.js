@@ -7,6 +7,7 @@ import * as serviceWorker from './serviceWorker';
 document.body.onmousedown = function(e) { if (e.button === 1) return false; }
 // window.onbeforeunload = function() {return false};
 
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

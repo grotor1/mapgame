@@ -1,11 +1,10 @@
 import React from "react";
-import {states} from "../db";
 
 export class Task extends React.Component{
     render() {
         return (
             <div className="task-background">
-                {states.filter((item) =>
+                {this.props.states.filter((item) =>
                     item.block === this.props.block
                 ).map((item) => (
                         <div>
