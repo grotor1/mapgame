@@ -23,7 +23,7 @@ mongoose.connect("mongodb+srv://grotor:V23v10a2004@grotor0.kcsbq.mongodb.net/gam
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-States.find({})
+
 
 // Setup static directory to serve
 app.use(express.static(path.resolve('client', 'build')));

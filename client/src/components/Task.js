@@ -4,8 +4,8 @@ export class Task extends React.Component{
     render() {
         return (
             <div className="task-background">
-                {this.props.states.filter((item) =>
-                    item.block === this.props.block
+                {props.states.filter((item) =>
+                    item.block === props.block
                 ).map((item) => (
                         <div>
                             <h4 className="task_state-name">{item.state1}</h4>
